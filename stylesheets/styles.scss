@@ -96,17 +96,22 @@ section {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        @media (max-width: $md), (max-device-width: $md) { 
+        @media (max-device-width: $md) { 
             align-items: center; 
             padding-top: $m8*2;
             padding-bottom: $m8*2;
+        }
+        @media (max-width: $md) { 
+            align-items: center; 
+            padding-top: $m6;
+            padding-bottom: $m6;
         }
         p {
             display: block;
             &:nth-child(1) {
                 font-size: 22px;
                 padding-top: $m4;
-                @media (max-width: $md), (max-device-width: $md) {
+                @media (max-device-width: $md) {
                     font-size: 52px;
                 }
             }
@@ -115,8 +120,12 @@ section {
                 font-weight: 800;
                 text-transform: uppercase;
                 margin-bottom: $m10*2;
-                @media (max-width: $md), (max-device-width: $md) { 
+                @media (max-device-width: $md) { 
                     font-size: 80px;
+                    margin-bottom: $m8; 
+                    text-align: center; 
+                }
+                @media (max-width: $md) { 
                     margin-bottom: $m8; 
                     text-align: center; 
                 }
@@ -124,7 +133,7 @@ section {
             &:nth-child(3) {
                 font-size: 18px;
                 margin-bottom: $m1;
-                @media (max-width: $md), (max-device-width: $md) {
+                @media (max-device-width: $md) {
                     font-size: 52px;
                 }
             }
@@ -133,7 +142,7 @@ section {
                 text-transform: uppercase;
                 padding: $m1 $m2;
                 background-color: $color-black;
-                @media (max-width: $md), (max-device-width: $md) {
+                @media (max-device-width: $md) {
                     font-size: 52px;
                 }
             }
@@ -168,10 +177,17 @@ section {
         font-size: 1.1em;
         line-height: 1.8em;
         strong { font-weight: 800; }
+        @media (max-width: $md), (max-device-width: $md) {
+            font-size: 18px;
+        }
+    }
+    h2 {
+        @media (max-device-width: $md) {
+            font-size: 50px;
+        }
     }
     .sponsor-title { 
         color: $color-red; 
-        // text-transform: uppercase; 
     }
     .sponsors {
         img {
@@ -179,6 +195,10 @@ section {
             height: 50px;
             margin: 0px $m2 $m5 $m2;
             opacity: 0.90;
+            @media (max-device-width: $md) {
+                height: 120px;
+                margin: 0px $m4 $m5 $m4;
+            }
         }
     }
 }
@@ -196,7 +216,11 @@ section {
                 flex-direction: column;
                 align-items: flex-end;
                 justify-content: center;
-                @media (max-width: $md), (max-device-width: $md) { align-items: flex-start; }
+                @media (max-width: $md) { align-items: flex-start; }
+                @media (max-device-width: $md) { 
+                    align-items: flex-start; 
+                    padding: $m8*2;
+                }
                 h2, h3, p, a { 
                     text-align: right; 
                     @media (max-width: $md), (max-device-width: $md) { text-align: left; }
@@ -204,14 +228,25 @@ section {
                 h2 {
                     font-size: 32px;
                     margin-bottom: $m1;
+                    @media (max-device-width: $md) {
+                        font-size: 60px;
+                    }
                 }
                 h3 {
                     font-size: 14px;
                     text-transform: uppercase;
                     opacity: 0.5;
                     margin-bottom: $m3;
+                    @media (max-device-width: $md) { 
+                        width: 100%; 
+                    }
                 }
-                p {}
+                p {
+                    @media (max-device-width: $md) {
+                        font-size: 32px;
+                        line-height: 1.4em;
+                    }
+                }
                 a {
                     margin-top: $m3;
                     text-transform: uppercase;
@@ -262,10 +297,16 @@ section {
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
+                @media (max-device-width: $md) {  
+                    padding: $m8*2;
+                }
                 h2, h3, p, a { text-align: left; }
                 h2 {
                     font-size: 32px;
                     margin-bottom: $m1;
+                    @media (max-device-width: $md) {
+                        font-size: 60px;
+                    }
                 }
                 h3 {
                     font-size: 14px;
@@ -273,7 +314,12 @@ section {
                     opacity: 0.5;
                     margin-bottom: $m3;
                 }
-                p {}
+                p {
+                    @media (max-device-width: $md) {
+                        font-size: 32px;
+                        line-height: 1.4em;
+                    }
+                }
                 a {
                     margin-top: $m3;
                     text-transform: uppercase;
@@ -294,15 +340,25 @@ section {
     .projects {
         display: flex; 
         justify-content: space-between;
-        @media (max-width: $md), (max-device-width: $md) { display: block; }
+        @media (max-width: $md), (max-device-width: $md) { 
+            display: block; 
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .project {
             background-color: $color-red;
             padding: $m6 $m4 $m4 $m4;
             margin: 0px $m4;
             width: 33.3%;
-            @media (max-width: $md), (max-device-width: $md) { 
+            @media (max-width: $md) { 
                 margin: 0px 0px $m4 0px; 
                 width: calc(100% - #{$m8}); 
+            }
+            @media (max-device-width: $md) { 
+                margin: 0px 0px $m4 0px; 
+                width: calc(100% - #{$m8*2}); 
+                padding: $m6*2 $m8 $m8 $m8;
             }
             h6, h3, p { 
                 text-align: center; 
@@ -316,17 +372,49 @@ section {
                 color: $color-black;
                 opacity: 0.5;
             }
-            h3 { margin-bottom: $m4; }
+            h3 { 
+                margin-bottom: $m4; 
+                @media (max-device-width: $md) {
+                    font-size: 64px;
+                }
+            }
             p { 
                 font-size: 14px;
                 margin-bottom: $m4; 
+                @media (max-device-width: $md) {
+                    font-size: 32px;
+                }
+            }
+            a { 
+                @media (max-device-width: $md) {
+                    font-size: 40px;
+                    width: 100%;
+                    max-width: 90%;
+                    padding: $m6 0px;
+                    margin-top: $m8;
+                }
             }
         }
     }
 }
 
 .where-we-are {
+    .title-group .title {
+        @media (max-device-width: $md) {
+            font-size: 70px;       
+        }
+    }
+    .title-group .subtitle {
+        @media (max-device-width: $md) {
+            font-size: 12px;       
+        }
+    }
     .countries {
+        @media (max-device-width: $md) {
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .continent { 
             border-left: 5px solid  $color-red;
             padding-left: $m2;
@@ -348,7 +436,12 @@ section {
                 width: 28%;
                 margin-right: $m6;
                 margin-bottom: $m6;
-                @media (max-width: $md), (max-device-width: $md) { width: calc(50% - #{$m4}*2); }
+                @media (max-width: $md) { 
+                    width: calc(50% - #{$m4}*2); 
+                }
+                @media (max-device-width: $md) { 
+                    width: calc(100% - #{$m4}*2); 
+                }
                 .flag {
                     display: block;
                     width: 80px;
@@ -357,6 +450,11 @@ section {
                     margin-right: $m2;
                     border-radius: 8px;
                     background-size: cover;
+                    @media (max-device-width: $md) {
+                        width: 160px;
+                        height: 160px;
+                        margin-right: $m4;
+                    }
                     &.global            { background-image: url('../img/flag-global.jpg'); }
                     &.argentina         { background-image: url('../img/flag-argentina.jpg'); }
                     &.triangulo-norte   { background-image: url('../img/flag-triangulo-norte.jpg'); }
@@ -370,17 +468,27 @@ section {
                 }
                 .details {
                     position: relative;
+                    @media (max-device-width: $md) {
+                        align-self: center;
+                    }
                     h4 {
                         font-size: 20px;
                         text-transform: uppercase;
                         font-weight: 600;
                         margin-top: $m1 * 1.5;
+                        @media (max-device-width: $md) {
+                            font-size: 40px;
+                        }
                     }
                     a {
                         display: inline-block;
                         color: $color-black;
                         text-decoration: underline;
                         margin-top: $m1 * 0.5;
+                        @media (max-device-width: $md) {
+                            font-size: 36px;
+                            margin-right: $m2;
+                        }
                         &:hover { color: $color-red; }
                     }
                     span {
@@ -388,6 +496,10 @@ section {
                         top: -5px;
                         left: 0px;
                         font-size: 10px;
+                        @media (max-device-width: $md) {
+                            top: -14px;
+                            font-size: 20px;
+                        }
                     }
                 }
             }
